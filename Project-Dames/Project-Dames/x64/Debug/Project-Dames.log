@@ -1,0 +1,33 @@
+﻿  Fitxa.cpp
+  Moviment.cpp
+  Posicio.cpp
+  Tauler.cpp
+  Generando código...
+C:\Users\Isma\source\repos\1749988\Projecte-Dames\Project-Dames\Project-Dames\Tauler.cpp(57,23): error C2039: "clearMovimentsValids": no es un miembro de "Fitxa"
+      C:\Users\Isma\source\repos\1749988\Projecte-Dames\Project-Dames\Project-Dames\Fitxa.h(12,7):
+      vea la declaración de 'Fitxa'
+  
+C:\Users\Isma\source\repos\1749988\Projecte-Dames\Project-Dames\Project-Dames\Tauler.cpp(67,5): error C2065: 'Moviment': identificador no declarado
+C:\Users\Isma\source\repos\1749988\Projecte-Dames\Project-Dames\Project-Dames\Tauler.cpp(67,14): error C2146: error de sintaxis: falta ';' delante del identificador 'movSel'
+C:\Users\Isma\source\repos\1749988\Projecte-Dames\Project-Dames\Project-Dames\Tauler.cpp(67,14): error C2065: 'movSel': identificador no declarado
+C:\Users\Isma\source\repos\1749988\Projecte-Dames\Project-Dames\Project-Dames\Tauler.cpp(68,36): error C2039: "getMovimentsValids": no es un miembro de "Fitxa"
+      C:\Users\Isma\source\repos\1749988\Projecte-Dames\Project-Dames\Project-Dames\Fitxa.h(12,7):
+      vea la declaración de 'Fitxa'
+  
+C:\Users\Isma\source\repos\1749988\Projecte-Dames\Project-Dames\Project-Dames\Tauler.cpp(68,22): error C2530: 'mov': se deben inicializar las referencias
+C:\Users\Isma\source\repos\1749988\Projecte-Dames\Project-Dames\Project-Dames\Tauler.cpp(68,22): error C3531: 'mov': un símbolo cuyo tipo contiene 'auto' debe tener un inicializador
+C:\Users\Isma\source\repos\1749988\Projecte-Dames\Project-Dames\Project-Dames\Tauler.cpp(68,26): error C2143: error de sintaxis: falta ';' delante de ':'
+C:\Users\Isma\source\repos\1749988\Projecte-Dames\Project-Dames\Project-Dames\Tauler.cpp(68,56): error C2143: error de sintaxis: falta ';' delante de ')'
+C:\Users\Isma\source\repos\1749988\Projecte-Dames\Project-Dames\Project-Dames\Tauler.cpp(69,25): error C2530: 'cam': se deben inicializar las referencias
+C:\Users\Isma\source\repos\1749988\Projecte-Dames\Project-Dames\Project-Dames\Tauler.cpp(70,14): error C3536: 'cam': no se puede usar antes de inicializarse
+C:\Users\Isma\source\repos\1749988\Projecte-Dames\Project-Dames\Project-Dames\Tauler.cpp(72,13): error C2065: 'movSel': identificador no declarado
+C:\Users\Isma\source\repos\1749988\Projecte-Dames\Project-Dames\Project-Dames\Tauler.cpp(99,34): error C2039: "getMovimentsValids": no es un miembro de "Fitxa"
+      C:\Users\Isma\source\repos\1749988\Projecte-Dames\Project-Dames\Project-Dames\Fitxa.h(12,7):
+      vea la declaración de 'Fitxa'
+  
+C:\Users\Isma\source\repos\1749988\Projecte-Dames\Project-Dames\Project-Dames\Tauler.cpp(99,22): error C2530: 'mov': se deben inicializar las referencias
+C:\Users\Isma\source\repos\1749988\Projecte-Dames\Project-Dames\Project-Dames\Tauler.cpp(99,22): error C3531: 'mov': un símbolo cuyo tipo contiene 'auto' debe tener un inicializador
+C:\Users\Isma\source\repos\1749988\Projecte-Dames\Project-Dames\Project-Dames\Tauler.cpp(99,26): error C2143: error de sintaxis: falta ';' delante de ':'
+C:\Users\Isma\source\repos\1749988\Projecte-Dames\Project-Dames\Project-Dames\Tauler.cpp(99,54): error C2143: error de sintaxis: falta ';' delante de ')'
+C:\Users\Isma\source\repos\1749988\Projecte-Dames\Project-Dames\Project-Dames\Tauler.cpp(100,25): error C2530: 'cam': se deben inicializar las referencias
+C:\Users\Isma\source\repos\1749988\Projecte-Dames\Project-Dames\Project-Dames\Tauler.cpp(101,14): error C3536: 'cam': no se puede usar antes de inicializarse
