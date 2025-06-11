@@ -5,81 +5,11 @@
 #include <cmath>
 #include <vector>
 #include <functional>
-#include <algorithm>
-#include <array>
+#include <algorithm> 
 
-namespace {
-
-    constexpr std::array<std::pair<int, int>, 4> DIRS{
-        {{1, 1}, {1, -1}, {-1, 1}, {-1, -1}}
-    };
-
-    bool dins(int f, int c) {
-        return f >= 0 && f < N_FILES && c >= 0 && c < N_COLUMNES;
-    }
-
-    void copyBoard(const Fitxa src[][N_COLUMNES],
-        Fitxa dst[][N_COLUMNES]) {
-        for (int r = 0; r < N_FILES; ++r)
-            for (int c = 0; c < N_COLUMNES; ++c)
-                dst[r][c] = src[r][c];
-    }
-
-    void exploreCaptures(Fitxa board[][N_COLUMNES], const Fitxa& fit,
-        ColorFitxa color, TipusFitxa tipus, Moviment seq,
-        std::vector<Moviment>& out) {
-        int f = seq.getSeq().back().getFila();
-        int c = seq.getSeq().back().getColumna();
-
-        for (auto [df, dc] : DIRS) {
-            if (tipus == TIPUS_NORMAL) {
-                int f1 = f + df, c1 = c + dc;
-                int f2 = f + 2 * df, c2 = c + 2 * dc;
-                if (dins(f2, c2) && !board[f1][c1].isEmpty() &&
-                    board[f1][c1].getColor() != color && board[f2][c2].isEmpty()) {
-                    Moviment next = seq;
-                    next.afegeix(Posicio(std::string() + char('a' + c2) +
-                        char('0' + (8 - f2))));
-                    out.push_back(next);
-                    Fitxa nb[N_FILES][N_COLUMNES];
-                    copyBoard(board, nb);
-                    nb[f1][c1].setEmpty();
-                    nb[f][c].setEmpty();
-                    nb[f2][c2] = fit;
-                    exploreCaptures(nb, fit, color, tipus, next, out);
-                }
-            }
-            else {
-                int r = f + df, cc = c + dc;
-                while (dins(r, cc) && board[r][cc].isEmpty()) {
-                    r += df;
-                    cc += dc;
-                }
-                if (dins(r, cc) && !board[r][cc].isEmpty() &&
-                    board[r][cc].getColor() != color) {
-                    int r2 = r + df, c2 = cc + dc;
-                    while (dins(r2, c2)) {
-                        if (!board[r2][c2].isEmpty())
-                            break;
-                        Moviment next = seq;
-                        next.afegeix(Posicio(std::string() + char('a' + c2) +
-                            char('0' + (8 - r2))));
-                        out.push_back(next);
-                        Fitxa nb[N_FILES][N_COLUMNES];
-                        copyBoard(board, nb);
-                        nb[r][cc].setEmpty();
-                        nb[f][c].setEmpty();
-                        nb[r2][c2] = fit;
-                        exploreCaptures(nb, fit, color, tipus, next, out);
-                        r2 += df;
-                        c2 += dc;
-                    }
-                }
-            }
-        }
-    }
-
-} // namespace
+static bool dins(int f, int c) {
+    return f >= 0 && f < N_FILES && c >= 0 && c < N_COLUMNES;
+}
 
 void Tauler::inicialitza(const std::string& nomFitxer) {
     for (int i = 0; i < N_FILES; ++i)
@@ -113,7 +43,7 @@ std::string Tauler::toString() const {
 }
 
 void Tauler::actualitzaMovimentsValids() {
-
+  
     for (int i = 0; i < N_FILES; ++i)
         for (int j = 0; j < N_COLUMNES; ++j)
             m_tauler[i][j].netejaMoviments();
@@ -121,32 +51,92 @@ void Tauler::actualitzaMovimentsValids() {
     for (int i = 0; i < N_FILES; ++i) {
         for (int j = 0; j < N_COLUMNES; ++j) {
             Fitxa fit = m_tauler[i][j];
-            if (fit.isEmpty())
-                continue;
-
+            if (fit.isEmpty()) continue;
             Posicio origen(std::string() + char('a' + j) + char('0' + (8 - i)));
 
+            
             Fitxa board[N_FILES][N_COLUMNES];
-            copyBoard(m_tauler, board);
-
+            for (int r = 0; r < N_FILES; ++r)
+                for (int c = 0; c < N_COLUMNES; ++c)
+                    board[r][c] = m_tauler[r][c];
             TipusFitxa tipus = fit.getTipus();
             ColorFitxa color = fit.getColor();
 
             std::vector<Moviment> captureMoves;
-            Moviment start(origen);
-            exploreCaptures(board, fit, color, tipus, start, captureMoves);
-
             std::vector<Moviment> simpleMoves;
-            for (auto [df, dc] : DIRS) {
+
+           
+            std::function<void(Fitxa[][N_COLUMNES], Moviment&)> rec;
+            rec = [&](Fitxa b[][N_COLUMNES], Moviment& seq) {
+                int f = seq.getSeq().back().getFila();
+                int c = seq.getSeq().back().getColumna();
                 if (tipus == TIPUS_NORMAL) {
-                    if ((color == COLOR_BLANC && df != -1) ||
-                        (color == COLOR_NEGRE && df != 1))
+                    int dirs[4][2] = { {1,1},{1,-1},{-1,1},{-1,-1} };
+                    for (auto& d : dirs) {
+                        int df = d[0], dc = d[1];
+                        int f1 = f + df, c1 = c + dc;
+                        int f2 = f + 2 * df, c2 = c + 2 * dc;
+                        if (dins(f2, c2)
+                            && !b[f1][c1].isEmpty()
+                            && b[f1][c1].getColor() != color
+                            && b[f2][c2].isEmpty()) {
+                            Moviment next = seq;
+                            next.afegeix(Posicio(std::string() + char('a' + c2) + char('0' + (8 - f2))));
+                            captureMoves.push_back(next);
+                            Fitxa nb[N_FILES][N_COLUMNES];
+                            for (int rr = 0; rr < N_FILES; ++rr)
+                                for (int cc = 0; cc < N_COLUMNES; ++cc)
+                                    nb[rr][cc] = b[rr][cc];
+                            nb[f1][c1].setEmpty();
+                            nb[f][c].setEmpty();
+                            nb[f2][c2] = fit;
+                            rec(nb, next);
+                        }
+                    }
+                }
+                else {
+                    int dirs[4][2] = { {1,1},{1,-1},{-1,1},{-1,-1} };
+                    for (auto& d : dirs) {
+                        int df = d[0], dc = d[1];
+                        int r = f + df, cc = c + dc;
+                        while (dins(r, cc) && b[r][cc].isEmpty()) { r += df; cc += dc; }
+                        if (dins(r, cc) && !b[r][cc].isEmpty() && b[r][cc].getColor() != color) {
+                            int r2 = r + df, c2 = cc + dc;
+                            while (dins(r2, c2)) {
+                                if (!b[r2][c2].isEmpty()) break;
+                                Moviment next = seq;
+                                next.afegeix(Posicio(std::string() + char('a' + c2) + char('0' + (8 - r2))));
+                                captureMoves.push_back(next);
+                                Fitxa nb[N_FILES][N_COLUMNES];
+                                for (int rr = 0; rr < N_FILES; ++rr)
+                                    for (int cc2 = 0; cc2 < N_COLUMNES; ++cc2)
+                                        nb[rr][cc2] = b[rr][cc2];
+                                nb[r][cc].setEmpty();
+                                nb[f][c].setEmpty();
+                                nb[r2][c2] = fit;
+                                rec(nb, next);
+                                r2 += df; c2 += dc;
+                            }
+                        }
+                    }
+                }
+                };
+
+           
+            Moviment start(origen);
+            rec(board, start);
+
+           
+            int dirsS[4][2] = { {1,1},{1,-1},{-1,1},{-1,-1} };
+            for (auto& d : dirsS) {
+                int df = d[0], dc = d[1];
+                if (tipus == TIPUS_NORMAL) {
+                    if ((color == COLOR_BLANC && df != -1) || (color == COLOR_NEGRE && df != 1))
                         continue;
                     int f1 = i + df, c1 = j + dc;
                     if (dins(f1, c1) && m_tauler[f1][c1].isEmpty()) {
                         Moviment m(origen);
-                        m.afegeix(Posicio(std::string() + char('a' + c1) +
-                            char('0' + (8 - f1))));
+                        m.afegeix(Posicio(std::string() + char('a' + c1) + char('0' + (8 - f1))));
                         simpleMoves.push_back(m);
                     }
                 }
@@ -154,26 +144,21 @@ void Tauler::actualitzaMovimentsValids() {
                     int r = i + df, c = j + dc;
                     while (dins(r, c) && m_tauler[r][c].isEmpty()) {
                         Moviment m(origen);
-                        m.afegeix(Posicio(std::string() + char('a' + c) +
-                            char('0' + (8 - r))));
+                        m.afegeix(Posicio(std::string() + char('a' + c) + char('0' + (8 - r))));
                         simpleMoves.push_back(m);
-                        r += df;
-                        c += dc;
+                        r += df; c += dc;
                     }
                 }
             }
 
-            if (tipus == TIPUS_NORMAL) {
-                for (auto& m : captureMoves)
-                    m_tauler[i][j].afegeixMoviment(m);
-                for (auto& m : simpleMoves)
-                    m_tauler[i][j].afegeixMoviment(m);
+            
+            if (fit.getTipus() == TIPUS_NORMAL) {
+                for (auto& m : captureMoves) m_tauler[i][j].afegeixMoviment(m);
+                for (auto& m : simpleMoves)  m_tauler[i][j].afegeixMoviment(m);
             }
             else {
-                for (auto& m : simpleMoves)
-                    m_tauler[i][j].afegeixMoviment(m);
-                for (auto& m : captureMoves)
-                    m_tauler[i][j].afegeixMoviment(m);
+                for (auto& m : simpleMoves)  m_tauler[i][j].afegeixMoviment(m);
+                for (auto& m : captureMoves) m_tauler[i][j].afegeixMoviment(m);
             }
         }
     }
@@ -188,7 +173,7 @@ void Tauler::getPosicionsPossibles(const Posicio& origen, int& n, Posicio pos[])
     for (const auto& m : movs) {
         if (m.longitud() < 2) continue;
         Posicio dest = m.getSeq().back();
-        if (dest == origen) continue;
+        if (dest == origen) continue;  
         bool exists = false;
         for (int k = 0; k < n; ++k) {
             if (pos[k] == dest) { exists = true; break; }
@@ -202,41 +187,36 @@ bool Tauler::mouFitxa(const Posicio& origen, const Posicio& desti) {
     Fitxa orig = m_tauler[fo][co];
     if (orig.isEmpty()) return false;
 
+    
     actualitzaMovimentsValids();
     auto movs = m_tauler[fo][co].getMoviments();
 
-    auto countCaptures = [](const Moviment& mv) {
-        int cap = 0;
-        const auto& seq = mv.getSeq();
-        for (size_t k = 0; k + 1 < seq.size(); ++k) {
-            int r1 = seq[k].getFila(), c1 = seq[k].getColumna();
-            int r2 = seq[k + 1].getFila(), c2 = seq[k + 1].getColumna();
-            if (std::abs(r2 - r1) > 1 || std::abs(c2 - c1) > 1) ++cap;
-        }
-        return cap;
-        };
-
+   
     int globalMaxCaptures = 0;
     std::vector<Posicio> piecesCapturing;
     for (int i = 0; i < N_FILES; ++i) {
         for (int j = 0; j < N_COLUMNES; ++j) {
-            if (m_tauler[i][j].isEmpty() || m_tauler[i][j].getColor() != orig.getColor())
-                continue;
+            if (m_tauler[i][j].isEmpty() || m_tauler[i][j].getColor() != orig.getColor()) continue;
             const auto& mvs = m_tauler[i][j].getMoviments();
             bool recorded = false;
             for (const auto& mv : mvs) {
-                int captures = countCaptures(mv);
+                int captures = 0;
+                const auto& seq = mv.getSeq();
+                for (size_t k = 0; k + 1 < seq.size(); ++k) {
+                    int r1 = seq[k].getFila(), c1 = seq[k].getColumna();
+                    int r2 = seq[k + 1].getFila(), c2 = seq[k + 1].getColumna();
+                    if (std::abs(r2 - r1) > 1 || std::abs(c2 - c1) > 1) ++captures;
+                }
                 if (captures > 0 && !recorded) {
-                    piecesCapturing.push_back(Posicio(std::string() + char('a' + j) +
-                        char('0' + (8 - i))));
+                    piecesCapturing.push_back(Posicio(std::string() + char('a' + j) + char('0' + (8 - i))));
                     recorded = true;
                 }
-                if (captures > globalMaxCaptures)
-                    globalMaxCaptures = captures;
+                if (captures > globalMaxCaptures) globalMaxCaptures = captures;
             }
         }
     }
 
+ 
     bool trobat = false;
     Moviment chosen;
     for (const auto& m : movs) {
@@ -248,15 +228,22 @@ bool Tauler::mouFitxa(const Posicio& origen, const Posicio& desti) {
     }
     if (!trobat) return false;
 
-    int chosenCaptures = countCaptures(chosen);
-
+    
+    int chosenCaptures = 0;
     const auto& seq = chosen.getSeq();
+    for (size_t k = 0; k + 1 < seq.size(); ++k) {
+        int r1 = seq[k].getFila(), c1 = seq[k].getColumna();
+        int r2 = seq[k + 1].getFila(), c2 = seq[k + 1].getColumna();
+        if (std::abs(r2 - r1) > 1 || std::abs(c2 - c1) > 1)
+            ++chosenCaptures;
+    }
 
+    
     if (globalMaxCaptures > 0 && chosenCaptures == 0) {
-
+      
         m_tauler[fo][co].setEmpty();
         m_tauler[desti.getFila()][desti.getColumna()] = orig;
-
+        
         for (const auto& p : piecesCapturing) {
             m_tauler[p.getFila()][p.getColumna()].setEmpty();
         }
@@ -264,7 +251,9 @@ bool Tauler::mouFitxa(const Posicio& origen, const Posicio& desti) {
         return true;
     }
 
+    
     if (globalMaxCaptures > 0 && chosenCaptures < globalMaxCaptures) {
+       
         for (size_t k = 0; k + 1 < seq.size(); ++k) {
             int r1 = seq[k].getFila(), c1 = seq[k].getColumna();
             int r2 = seq[k + 1].getFila(), c2 = seq[k + 1].getColumna();
@@ -279,13 +268,14 @@ bool Tauler::mouFitxa(const Posicio& origen, const Posicio& desti) {
                 rr += dr; cc += dc;
             }
         }
-
+        
         m_tauler[fo][co].setEmpty();
-
+       
         actualitzaMovimentsValids();
         return true;
     }
 
+    
     for (size_t k = 0; k + 1 < seq.size(); ++k) {
         int r1 = seq[k].getFila(), c1 = seq[k].getColumna();
         int r2 = seq[k + 1].getFila(), c2 = seq[k + 1].getColumna();
@@ -302,7 +292,7 @@ bool Tauler::mouFitxa(const Posicio& origen, const Posicio& desti) {
     }
     m_tauler[fo][co].setEmpty();
     Posicio last = seq.back();
-
+    
     if (orig.getTipus() == TIPUS_NORMAL) {
         int fd = last.getFila();
         if ((orig.getColor() == COLOR_BLANC && fd == 0) ||
