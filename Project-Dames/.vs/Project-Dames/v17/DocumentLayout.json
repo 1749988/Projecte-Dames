@@ -1,0 +1,102 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Isma\\source\\repos\\1749988\\Projecte-Dames\\Project-Dames\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{8422312D-5A79-4E8B-9CBC-6AACE382D125}|Project-Dames\\Project-Dames.vcxproj|C:\\Users\\Isma\\source\\repos\\1749988\\Projecte-Dames\\Project-Dames\\Project-Dames\\moviment.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{8422312D-5A79-4E8B-9CBC-6AACE382D125}|Project-Dames\\Project-Dames.vcxproj|solutionrelative:Project-Dames\\moviment.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Isma\\Documents\\tauler.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8422312D-5A79-4E8B-9CBC-6AACE382D125}|Project-Dames\\Project-Dames.vcxproj|C:\\Users\\Isma\\source\\repos\\1749988\\Projecte-Dames\\Project-Dames\\Project-Dames\\tauler.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{8422312D-5A79-4E8B-9CBC-6AACE382D125}|Project-Dames\\Project-Dames.vcxproj|solutionrelative:Project-Dames\\tauler.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8422312D-5A79-4E8B-9CBC-6AACE382D125}|Project-Dames\\Project-Dames.vcxproj|C:\\Users\\Isma\\source\\repos\\1749988\\Projecte-Dames\\Project-Dames\\Project-Dames\\fitxa.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{8422312D-5A79-4E8B-9CBC-6AACE382D125}|Project-Dames\\Project-Dames.vcxproj|solutionrelative:Project-Dames\\fitxa.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8422312D-5A79-4E8B-9CBC-6AACE382D125}|Project-Dames\\Project-Dames.vcxproj|C:\\Users\\Isma\\source\\repos\\1749988\\Projecte-Dames\\Project-Dames\\Project-Dames\\moviment.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{8422312D-5A79-4E8B-9CBC-6AACE382D125}|Project-Dames\\Project-Dames.vcxproj|solutionrelative:Project-Dames\\moviment.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 100,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "moviment.hpp",
+              "DocumentMoniker": "C:\\Users\\Isma\\source\\repos\\1749988\\Projecte-Dames\\Project-Dames\\Project-Dames\\moviment.hpp",
+              "RelativeDocumentMoniker": "Project-Dames\\moviment.hpp",
+              "ToolTip": "C:\\Users\\Isma\\source\\repos\\1749988\\Projecte-Dames\\Project-Dames\\Project-Dames\\moviment.hpp",
+              "RelativeToolTip": "Project-Dames\\moviment.hpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-05-07T00:53:52.428Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "tauler.cpp",
+              "DocumentMoniker": "C:\\Users\\Isma\\source\\repos\\1749988\\Projecte-Dames\\Project-Dames\\Project-Dames\\tauler.cpp",
+              "RelativeDocumentMoniker": "Project-Dames\\tauler.cpp",
+              "ToolTip": "C:\\Users\\Isma\\source\\repos\\1749988\\Projecte-Dames\\Project-Dames\\Project-Dames\\tauler.cpp",
+              "RelativeToolTip": "Project-Dames\\tauler.cpp",
+              "ViewState": "AgIAADYAAAAAAAAAAAAAAEMAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-05-06T14:45:30.551Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "fitxa.cpp",
+              "DocumentMoniker": "C:\\Users\\Isma\\source\\repos\\1749988\\Projecte-Dames\\Project-Dames\\Project-Dames\\fitxa.cpp",
+              "RelativeDocumentMoniker": "Project-Dames\\fitxa.cpp",
+              "ToolTip": "C:\\Users\\Isma\\source\\repos\\1749988\\Projecte-Dames\\Project-Dames\\Project-Dames\\fitxa.cpp",
+              "RelativeToolTip": "Project-Dames\\fitxa.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-05-02T11:27:12.125Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "tauler.cpp",
+              "DocumentMoniker": "C:\\Users\\Isma\\Documents\\tauler.cpp",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\Documents\\tauler.cpp",
+              "ToolTip": "C:\\Users\\Isma\\Documents\\tauler.cpp",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\Documents\\tauler.cpp",
+              "ViewState": "AgIAAK0AAAAAAAAAAAAAACABAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-05-02T11:04:47.65Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "moviment.cpp",
+              "DocumentMoniker": "C:\\Users\\Isma\\source\\repos\\1749988\\Projecte-Dames\\Project-Dames\\Project-Dames\\moviment.cpp",
+              "RelativeDocumentMoniker": "Project-Dames\\moviment.cpp",
+              "ToolTip": "C:\\Users\\Isma\\source\\repos\\1749988\\Projecte-Dames\\Project-Dames\\Project-Dames\\moviment.cpp",
+              "RelativeToolTip": "Project-Dames\\moviment.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-04-30T23:47:03.823Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
