@@ -127,16 +127,64 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\..\..\..\Pictures\codi_lliurament_final\0. C++ Code\Graphic Lib\debug.h" />
+    <ClInclude Include="..\..\..\..\..\..\Pictures\codi_lliurament_final\0. C++ Code\Graphic Lib\error.h" />
+    <ClInclude Include="..\..\..\..\..\..\Pictures\codi_lliurament_final\0. C++ Code\Graphic Lib\image_png.h" />
+    <ClInclude Include="..\..\..\..\..\..\Pictures\codi_lliurament_final\0. C++ Code\Graphic Lib\keyboard.h" />
+    <ClInclude Include="..\..\..\..\..\..\Pictures\codi_lliurament_final\0. C++ Code\Graphic Lib\keyboard_sdl.h" />
+    <ClInclude Include="..\..\..\..\..\..\Pictures\codi_lliurament_final\0. C++ Code\Graphic Lib\libreria.h" />
+    <ClInclude Include="..\..\..\..\..\..\Pictures\codi_lliurament_final\0. C++ Code\Graphic Lib\mouse.h" />
+    <ClInclude Include="..\..\..\..\..\..\Pictures\codi_lliurament_final\0. C++ Code\Graphic Lib\NFont\NFont.h" />
+    <ClInclude Include="..\..\..\..\..\..\Pictures\codi_lliurament_final\0. C++ Code\Graphic Lib\NFont\NFont_gpu.h" />
+    <ClInclude Include="..\..\..\..\..\..\Pictures\codi_lliurament_final\0. C++ Code\Graphic Lib\NFont\SDL_FontCache.h" />
+    <ClInclude Include="..\..\..\..\..\..\Pictures\codi_lliurament_final\0. C++ Code\Graphic Lib\sound.h" />
+    <ClInclude Include="..\..\..\..\..\..\Pictures\codi_lliurament_final\0. C++ Code\Graphic Lib\sprites.h" />
+    <ClInclude Include="..\..\..\..\..\..\Pictures\codi_lliurament_final\0. C++ Code\Graphic Lib\stb_vorbis.h" />
+    <ClInclude Include="..\..\..\..\..\..\Pictures\codi_lliurament_final\0. C++ Code\Graphic Lib\video.h" />
+    <ClInclude Include="..\..\..\..\..\..\Pictures\codi_lliurament_final\0. C++ Code\Logic Game\GraphicManager.h" />
+    <ClInclude Include="..\..\..\..\..\..\Pictures\codi_lliurament_final\0. C++ Code\Logic Game\info_joc.hpp" />
+    <ClInclude Include="..\..\..\..\..\..\Pictures\codi_lliurament_final\0. C++ Code\Logic Game\joc.hpp" />
+    <ClInclude Include="cuamoviments.hpp" />
     <ClInclude Include="fitxa.hpp" />
     <ClInclude Include="moviment.hpp" />
     <ClInclude Include="posicio.hpp" />
     <ClInclude Include="tauler.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\..\..\..\Pictures\codi_lliurament_final\0. C++ Code\Graphic Lib\debug.cpp" />
+    <ClCompile Include="..\..\..\..\..\..\Pictures\codi_lliurament_final\0. C++ Code\Graphic Lib\image_png.cpp" />
+    <ClCompile Include="..\..\..\..\..\..\Pictures\codi_lliurament_final\0. C++ Code\Graphic Lib\keyboard.cpp" />
+    <ClCompile Include="..\..\..\..\..\..\Pictures\codi_lliurament_final\0. C++ Code\Graphic Lib\mouse.cpp" />
+    <ClCompile Include="..\..\..\..\..\..\Pictures\codi_lliurament_final\0. C++ Code\Graphic Lib\NFont\NFont.cpp" />
+    <ClCompile Include="..\..\..\..\..\..\Pictures\codi_lliurament_final\0. C++ Code\Graphic Lib\NFont\SDL_FontCache.cpp" />
+    <ClCompile Include="..\..\..\..\..\..\Pictures\codi_lliurament_final\0. C++ Code\Graphic Lib\sound.cpp" />
+    <ClCompile Include="..\..\..\..\..\..\Pictures\codi_lliurament_final\0. C++ Code\Graphic Lib\sprites.cpp" />
+    <ClCompile Include="..\..\..\..\..\..\Pictures\codi_lliurament_final\0. C++ Code\Graphic Lib\stb_vorbis.cpp" />
+    <ClCompile Include="..\..\..\..\..\..\Pictures\codi_lliurament_final\0. C++ Code\Graphic Lib\video.cpp" />
+    <ClCompile Include="..\..\..\..\..\..\Pictures\codi_lliurament_final\0. C++ Code\Logic Game\GraphicManager.cpp" />
+    <ClCompile Include="..\..\..\..\..\..\Pictures\codi_lliurament_final\0. C++ Code\Logic Game\joc.cpp" />
+    <ClCompile Include="..\..\..\..\..\..\Pictures\codi_lliurament_final\0. C++ Code\Logic Game\main.cpp" />
+    <ClCompile Include="cuamoviments.cpp" />
     <ClCompile Include="fitxa.cpp" />
     <ClCompile Include="moviment.cpp" />
     <ClCompile Include="posicio.cpp" />
     <ClCompile Include="tauler.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\..\..\..\..\..\Pictures\codi_lliurament_final\1. Resources\data\Fitxes\dama_blanca.png" />
+    <Image Include="..\..\..\..\..\..\Pictures\codi_lliurament_final\1. Resources\data\Fitxes\dama_negra.png" />
+    <Image Include="..\..\..\..\..\..\Pictures\codi_lliurament_final\1. Resources\data\Fitxes\fitxa_blanca.png" />
+    <Image Include="..\..\..\..\..\..\Pictures\codi_lliurament_final\1. Resources\data\Fitxes\fitxa_negra.png" />
+    <Image Include="..\..\..\..\..\..\Pictures\codi_lliurament_final\1. Resources\data\GUI\fons.png" />
+    <Image Include="..\..\..\..\..\..\Pictures\codi_lliurament_final\1. Resources\data\GUI\posicio_valida.png" />
+    <Image Include="..\..\..\..\..\..\Pictures\codi_lliurament_final\1. Resources\data\GUI\tauler.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="..\..\..\..\..\..\Pictures\codi_lliurament_final\1. Resources\data\Fonts\FreeSans.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\..\..\..\..\..\Pictures\codi_lliurament_final\1. Resources\data\Games\moviments.txt" />
+    <Text Include="..\..\..\..\..\..\Pictures\codi_lliurament_final\1. Resources\data\Games\tauler_inicial.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

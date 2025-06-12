@@ -1,33 +1,90 @@
-﻿  Fitxa.cpp
-  Moviment.cpp
-  Posicio.cpp
-  Tauler.cpp
+﻿  debug.cpp
+  image_png.cpp
+  keyboard.cpp
+  mouse.cpp
+C:\Users\Isma\Pictures\codi_lliurament_final\0. C++ Code\Graphic Lib\image_png.cpp(8,10): error C1083: No se puede abrir el archivo incluir: 'png.h': No such file or directory
+C:\Users\Isma\Pictures\codi_lliurament_final\0. C++ Code\Graphic Lib\keyboard.h(4,10): error C1083: No se puede abrir el archivo incluir: 'SDL.h': No such file or directory
+  NFont.cpp
+  SDL_FontCache.cpp
+  sound.cpp
+  (compilando archivo de origen "../../../../../../Pictures/codi_lliurament_final/0.%20C++%20Code/Graphic%20Lib/keyboard.cpp")
+  
+C:\Users\Isma\Pictures\codi_lliurament_final\0. C++ Code\Graphic Lib\video.h(4,10): error C1083: No se puede abrir el archivo incluir: 'SDL.h': No such file or directory
+  (compilando archivo de origen "../../../../../../Pictures/codi_lliurament_final/0.%20C++%20Code/Graphic%20Lib/mouse.cpp")
+  
+C:\Users\Isma\Pictures\codi_lliurament_final\0. C++ Code\Graphic Lib\NFont\NFont.h(37,10): error C1083: No se puede abrir el archivo incluir: 'SDL.h': No such file or directory
+  (compilando archivo de origen "../../../../../../Pictures/codi_lliurament_final/0.%20C++%20Code/Graphic%20Lib/NFont/NFont.cpp")
+  
+C:\Users\Isma\Pictures\codi_lliurament_final\0. C++ Code\Graphic Lib\NFont\SDL_FontCache.h(39,10): error C1083: No se puede abrir el archivo incluir: 'SDL.h': No such file or directory
+  (compilando archivo de origen "../../../../../../Pictures/codi_lliurament_final/0.%20C++%20Code/Graphic%20Lib/NFont/SDL_FontCache.cpp")
+  
+C:\Users\Isma\Pictures\codi_lliurament_final\0. C++ Code\Graphic Lib\sound.cpp(2,10): error C1083: No se puede abrir el archivo incluir: 'SDL.h': No such file or directory
+  sprites.cpp
+C:\Users\Isma\Pictures\codi_lliurament_final\0. C++ Code\Graphic Lib\video.h(4,10): error C1083: No se puede abrir el archivo incluir: 'SDL.h': No such file or directory
+  (compilando archivo de origen "../../../../../../Pictures/codi_lliurament_final/0.%20C++%20Code/Graphic%20Lib/sprites.cpp")
+  
+  stb_vorbis.cpp
+  video.cpp
+C:\Users\Isma\Pictures\codi_lliurament_final\0. C++ Code\Graphic Lib\keyboard.h(4,10): error C1083: No se puede abrir el archivo incluir: 'SDL.h': No such file or directory
+  (compilando archivo de origen "../../../../../../Pictures/codi_lliurament_final/0.%20C++%20Code/Graphic%20Lib/video.cpp")
+  
+  GraphicManager.cpp
+C:\Users\Isma\Pictures\codi_lliurament_final\0. C++ Code\Graphic Lib\keyboard.h(4,10): error C1083: No se puede abrir el archivo incluir: 'SDL.h': No such file or directory
+  (compilando archivo de origen "../../../../../../Pictures/codi_lliurament_final/0.%20C++%20Code/Logic%20Game/GraphicManager.cpp")
+  
+  joc.cpp
+C:\Users\Isma\Pictures\codi_lliurament_final\0. C++ Code\Logic Game\joc.hpp(7,10): error C1083: No se puede abrir el archivo incluir: 'tauler.hpp': No such file or directory
+  (compilando archivo de origen "../../../../../../Pictures/codi_lliurament_final/0.%20C++%20Code/Logic%20Game/joc.cpp")
+  
+  main.cpp
+C:\Users\Isma\Pictures\codi_lliurament_final\0. C++ Code\Graphic Lib\keyboard.h(4,10): error C1083: No se puede abrir el archivo incluir: 'SDL.h': No such file or directory
+  (compilando archivo de origen "../../../../../../Pictures/codi_lliurament_final/0.%20C++%20Code/Logic%20Game/main.cpp")
+  
+  cuamoviments.cpp
+C:\Users\Isma\source\repos\1749988\Projecte-Dames\Project-Dames\Project-Dames\cuamoviments.cpp(75,11): error C2228: el operando izquierdo de '.afegeix' debe tener class/struct/union
+  moviment.cpp
+C:\Users\Isma\source\repos\1749988\Projecte-Dames\Project-Dames\Project-Dames\cuamoviments.cpp(76,9): error C2664: 'void CuaMoviments::encola(const Moviment &)': el argumento 1 no puede convertirse de 'Moviment (__cdecl *)(Posicio)' a 'const Moviment &'
+      C:\Users\Isma\source\repos\1749988\Projecte-Dames\Project-Dames\Project-Dames\cuamoviments.cpp(76,16):
+      Razón: no se puede realizar la conversión de 'overloaded-function' a 'const Moviment'
+      C:\Users\Isma\source\repos\1749988\Projecte-Dames\Project-Dames\Project-Dames\cuamoviments.cpp(76,16):
+      'Moviment::Moviment':ninguna función sobrecargada pudo convertir todos los tipos de argumento
+          C:\Users\Isma\source\repos\1749988\Projecte-Dames\Project-Dames\Project-Dames\moviment.hpp(17,1):
+          puede ser 'Moviment::Moviment(Moviment &&)'
+              C:\Users\Isma\source\repos\1749988\Projecte-Dames\Project-Dames\Project-Dames\cuamoviments.cpp(76,16):
+              'Moviment::Moviment(Moviment &&)': el argumento 1 no puede convertirse de 'Moviment (__cdecl *)(Posicio)' a 'Moviment &&'
+                  C:\Users\Isma\source\repos\1749988\Projecte-Dames\Project-Dames\Project-Dames\cuamoviments.cpp(76,16):
+                  Razón: no se puede realizar la conversión de 'overloaded-function' a 'Moviment'
+                  C:\Users\Isma\source\repos\1749988\Projecte-Dames\Project-Dames\Project-Dames\cuamoviments.cpp(76,16):
+                  La conversión requiere un segundo operador de conversión definido por el usuario o constructor
+          C:\Users\Isma\source\repos\1749988\Projecte-Dames\Project-Dames\Project-Dames\moviment.hpp(17,1):
+          o       'Moviment::Moviment(const Moviment &)'
+              C:\Users\Isma\source\repos\1749988\Projecte-Dames\Project-Dames\Project-Dames\cuamoviments.cpp(76,16):
+              'Moviment::Moviment(const Moviment &)': el argumento 1 no puede convertirse de 'Moviment (__cdecl *)(Posicio)' a 'const Moviment &'
+                  C:\Users\Isma\source\repos\1749988\Projecte-Dames\Project-Dames\Project-Dames\cuamoviments.cpp(76,16):
+                  Razón: no se puede realizar la conversión de 'overloaded-function' a 'const Moviment'
+                  C:\Users\Isma\source\repos\1749988\Projecte-Dames\Project-Dames\Project-Dames\cuamoviments.cpp(76,16):
+                  La conversión requiere un segundo operador de conversión definido por el usuario o constructor
+          C:\Users\Isma\source\repos\1749988\Projecte-Dames\Project-Dames\Project-Dames\moviment.hpp(13,5):
+          o       'Moviment::Moviment(const Posicio &)'
+              C:\Users\Isma\source\repos\1749988\Projecte-Dames\Project-Dames\Project-Dames\cuamoviments.cpp(76,16):
+              'Moviment::Moviment(const Posicio &)': el argumento 1 no puede convertirse de 'Moviment (__cdecl *)(Posicio)' a 'const Posicio &'
+                  C:\Users\Isma\source\repos\1749988\Projecte-Dames\Project-Dames\Project-Dames\cuamoviments.cpp(76,16):
+                  Razón: no se puede realizar la conversión de 'overloaded-function' a 'const Posicio'
+                  C:\Users\Isma\source\repos\1749988\Projecte-Dames\Project-Dames\Project-Dames\cuamoviments.cpp(76,16):
+                  La conversión requiere un segundo operador de conversión definido por el usuario o constructor
+          C:\Users\Isma\source\repos\1749988\Projecte-Dames\Project-Dames\Project-Dames\cuamoviments.cpp(76,16):
+          al hacer coincidir la lista de argumentos '(overloaded-function)'
+      C:\Users\Isma\source\repos\1749988\Projecte-Dames\Project-Dames\Project-Dames\cuamoviments.cpp(14,20):
+      vea la declaración de 'CuaMoviments::encola'
+      C:\Users\Isma\source\repos\1749988\Projecte-Dames\Project-Dames\Project-Dames\cuamoviments.cpp(76,9):
+      al hacer coincidir la lista de argumentos '(overloaded-function)'
+  
+  posicio.cpp
+  tauler.cpp
+C:\Users\Isma\source\repos\1749988\Projecte-Dames\Project-Dames\Project-Dames\tauler.cpp(42,20): error C2429: función de idioma 'Enlaces estructurados' requiere la marca de compilador '/std:c++17'
+C:\Users\Isma\source\repos\1749988\Projecte-Dames\Project-Dames\Project-Dames\tauler.cpp(170,24): error C2429: función de idioma 'Enlaces estructurados' requiere la marca de compilador '/std:c++17'
+C:\Users\Isma\source\repos\1749988\Projecte-Dames\Project-Dames\Project-Dames\tauler.cpp(350,5): error C2440: 'return': no se puede realizar la conversión de 'std::ostringstream' a 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+      C:\Users\Isma\source\repos\1749988\Projecte-Dames\Project-Dames\Project-Dames\tauler.cpp(350,5):
+      No hay disponible ningún operador de conversión definido por el usuario que pueda realizar esta conversión, o bien no se puede llamar al operador
+  
   Generando código...
-C:\Users\Isma\source\repos\1749988\Projecte-Dames\Project-Dames\Project-Dames\Tauler.cpp(57,23): error C2039: "clearMovimentsValids": no es un miembro de "Fitxa"
-      C:\Users\Isma\source\repos\1749988\Projecte-Dames\Project-Dames\Project-Dames\Fitxa.h(12,7):
-      vea la declaración de 'Fitxa'
-  
-C:\Users\Isma\source\repos\1749988\Projecte-Dames\Project-Dames\Project-Dames\Tauler.cpp(67,5): error C2065: 'Moviment': identificador no declarado
-C:\Users\Isma\source\repos\1749988\Projecte-Dames\Project-Dames\Project-Dames\Tauler.cpp(67,14): error C2146: error de sintaxis: falta ';' delante del identificador 'movSel'
-C:\Users\Isma\source\repos\1749988\Projecte-Dames\Project-Dames\Project-Dames\Tauler.cpp(67,14): error C2065: 'movSel': identificador no declarado
-C:\Users\Isma\source\repos\1749988\Projecte-Dames\Project-Dames\Project-Dames\Tauler.cpp(68,36): error C2039: "getMovimentsValids": no es un miembro de "Fitxa"
-      C:\Users\Isma\source\repos\1749988\Projecte-Dames\Project-Dames\Project-Dames\Fitxa.h(12,7):
-      vea la declaración de 'Fitxa'
-  
-C:\Users\Isma\source\repos\1749988\Projecte-Dames\Project-Dames\Project-Dames\Tauler.cpp(68,22): error C2530: 'mov': se deben inicializar las referencias
-C:\Users\Isma\source\repos\1749988\Projecte-Dames\Project-Dames\Project-Dames\Tauler.cpp(68,22): error C3531: 'mov': un símbolo cuyo tipo contiene 'auto' debe tener un inicializador
-C:\Users\Isma\source\repos\1749988\Projecte-Dames\Project-Dames\Project-Dames\Tauler.cpp(68,26): error C2143: error de sintaxis: falta ';' delante de ':'
-C:\Users\Isma\source\repos\1749988\Projecte-Dames\Project-Dames\Project-Dames\Tauler.cpp(68,56): error C2143: error de sintaxis: falta ';' delante de ')'
-C:\Users\Isma\source\repos\1749988\Projecte-Dames\Project-Dames\Project-Dames\Tauler.cpp(69,25): error C2530: 'cam': se deben inicializar las referencias
-C:\Users\Isma\source\repos\1749988\Projecte-Dames\Project-Dames\Project-Dames\Tauler.cpp(70,14): error C3536: 'cam': no se puede usar antes de inicializarse
-C:\Users\Isma\source\repos\1749988\Projecte-Dames\Project-Dames\Project-Dames\Tauler.cpp(72,13): error C2065: 'movSel': identificador no declarado
-C:\Users\Isma\source\repos\1749988\Projecte-Dames\Project-Dames\Project-Dames\Tauler.cpp(99,34): error C2039: "getMovimentsValids": no es un miembro de "Fitxa"
-      C:\Users\Isma\source\repos\1749988\Projecte-Dames\Project-Dames\Project-Dames\Fitxa.h(12,7):
-      vea la declaración de 'Fitxa'
-  
-C:\Users\Isma\source\repos\1749988\Projecte-Dames\Project-Dames\Project-Dames\Tauler.cpp(99,22): error C2530: 'mov': se deben inicializar las referencias
-C:\Users\Isma\source\repos\1749988\Projecte-Dames\Project-Dames\Project-Dames\Tauler.cpp(99,22): error C3531: 'mov': un símbolo cuyo tipo contiene 'auto' debe tener un inicializador
-C:\Users\Isma\source\repos\1749988\Projecte-Dames\Project-Dames\Project-Dames\Tauler.cpp(99,26): error C2143: error de sintaxis: falta ';' delante de ':'
-C:\Users\Isma\source\repos\1749988\Projecte-Dames\Project-Dames\Project-Dames\Tauler.cpp(99,54): error C2143: error de sintaxis: falta ';' delante de ')'
-C:\Users\Isma\source\repos\1749988\Projecte-Dames\Project-Dames\Project-Dames\Tauler.cpp(100,25): error C2530: 'cam': se deben inicializar las referencias
-C:\Users\Isma\source\repos\1749988\Projecte-Dames\Project-Dames\Project-Dames\Tauler.cpp(101,14): error C3536: 'cam': no se puede usar antes de inicializarse
