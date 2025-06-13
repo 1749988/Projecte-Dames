@@ -1,17 +1,13 @@
-# Projecte-Dames
+# Project-Dames
 
-Este repositorio contiene una implementación básica del juego de Damas (Checkers) en C++, siguiendo la estructura de clases propuesta en la asignatura.
+## Descripción del proyecto
 
-## Estructura del proyecto
+**Project-Dames** es una implementación completa del juego de Damas en C++, desarrollada para la asignatura de Metodologia de Programación.
 
-- **Ftixa.h / Fitxa.cpp**  
-  Declara e implementa la clase `Fitxa`, que representa una pieza en el tablero (puede ser normal, dama o vacía; color blanco o negro).
+- Se ha diseñado un **motor de juego** basado en:
+  - **Gestión dinámica de memoria**: la clase `Tauler` utiliza `std::vector<Fitxa*>` y `new`/`delete` para manejar piezas en tiempo de ejecución.
+  - **Lógica de movimientos**: cálculo de movimientos simples y capturas recursivas para fichas normales y damas.
+  - **Modo Replay**: almacenamiento y reproducción de secuencias de jugadas mediante la clase `CuaMoviments`, estructurada como una lista enlazada.
 
-- **Moviment.h / Moviment.cpp**  
-  Declara e implementa la clase `Moviment`, que encapsula la información sobre un movimiento específico (posiciones recorridas, capturas, etc.).
 
-- **Posicio.h / Posicio.cpp**  
-  Representa una posición en el tablero (ejemplo: “b2”). Permite convertir de string a coordenadas internas y viceversa, además de comparar dos posiciones.
 
-- **Tauler.h / Tauler.cpp**  
-  Contiene la lógica principal del tablero: inicialización a partir de un fichero de texto, actualización de movimientos válidos, movimiento de piezas, así como un método `toString()` para mostrar el estado del tablero.
