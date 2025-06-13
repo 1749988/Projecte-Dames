@@ -9,10 +9,12 @@
 #include <array>
 #include "moviment.hpp"
 
+using namespace std;
+
 namespace {
 
     // Direccions diagonals
-    constexpr std::array<std::pair<int, int>, 4> DIRS{ {
+    constexpr array<pair<int, int>, 4> DIRS{ {
         {1,1},{1,-1},{-1,1},{-1,-1}
     } };
 
@@ -35,11 +37,13 @@ namespace {
         ColorFitxa color,
         TipusFitxa tipus,
         Moviment seq,
-        std::vector<Moviment>& out) {
+        vector<Moviment>& out) {
         int f = seq.getSeq().back().getFila();
         int c = seq.getSeq().back().getColumna();
 
-        for (auto [df, dc] : DIRS) {
+        for (const pair<int, int>& dir : DIRS) {
+            int df = dir.first;
+            int dc = dir.second;
             if (tipus == TIPUS_NORMAL) {
                 int f1 = f + df, c1 = c + dc;
                 int f2 = f + 2 * df, c2 = c + 2 * dc;
@@ -49,7 +53,7 @@ namespace {
                     && board[f2][c2].isEmpty()) {
                     Moviment next = seq;
                     next.afegeix(Posicio(
-                        std::string() + char('a' + c2) + char('0' + (8 - f2))
+                        string() + char('a' + c2) + char('0' + (8 - f2))
                     ));
                     out.push_back(next);
                     Fitxa nb[N_FILES][N_COLUMNES];
@@ -73,7 +77,7 @@ namespace {
                         if (!board[r2][c2].isEmpty()) break;
                         Moviment next = seq;
                         next.afegeix(Posicio(
-                            std::string() + char('a' + c2) + char('0' + (8 - r2))
+                            string() + char('a' + c2) + char('0' + (8 - r2))
                         ));
                         out.push_back(next);
                         Fitxa nb[N_FILES][N_COLUMNES];
@@ -94,28 +98,28 @@ namespace {
 // ------------------------------
 // Destructor: allibera totes les Fitxa*
 Tauler::~Tauler() {
-    for (auto& fila : m_tauler)
-        for (auto ptr : fila)
+    for (vector<Fitxa*>& fila : m_tauler)
+        for (Fitxa* ptr : fila)
             delete ptr;  // ignora nullptr
 }
 
 // ------------------------------
 // Inicialitza amb vector dinàmic i crea Fitxa* per cada peça
-void Tauler::inicialitza(const std::string& nomFitxer) {
+void Tauler::inicialitza(const string& nomFitxer) {
     // 1) Redimensiona i inicialitza a nullptr
     m_tauler.assign(
         N_FILES,
-        std::vector<Fitxa*>(N_COLUMNES, nullptr)
+        vector<Fitxa*>(N_COLUMNES, nullptr)
     );
 
     // 2) Llegeix fitxer i col·loca fitxes
-    std::ifstream in(nomFitxer);
+    ifstream in(nomFitxer);
     if (!in)
-        throw std::runtime_error(
+        throw runtime_error(
             "No es pot obrir fitxer \"" + nomFitxer + "\""
         );
 
-    char c; std::string pos;
+    char c; string pos;
     while (in >> c >> pos) {
         Posicio p(pos);
         int f = p.getFila(), col = p.getColumna();
@@ -148,26 +152,26 @@ void Tauler::actualitzaMovimentsValids() {
                 for (int c = 0; c < N_COLUMNES; ++c) {
                     if (m_tauler[r][c])
                         board[r][c] = *m_tauler[r][c];
-                    else {
+                    else
                         board[r][c].setEmpty();
-                    }
                 }
             }
 
             Posicio origen(
-                std::string() + char('a' + j) + char('0' + (8 - i))
+                string() + char('a' + j) + char('0' + (8 - i))
             );
             ColorFitxa color = ptr->getColor();
             TipusFitxa tipus = ptr->getTipus();
 
             // 2) Captures recursives
-            std::vector<Moviment> captureMoves;
+            vector<Moviment> captureMoves;
             exploreCaptures(board, *ptr, color, tipus,
                 Moviment(origen), captureMoves);
 
             // 3) Moviments simples
-            std::vector<Moviment> simpleMoves;
-            for (auto [df, dc] : DIRS) {
+            vector<Moviment> simpleMoves;
+            for (const pair<int, int>& dir : DIRS) {
+                int df = dir.first, dc = dir.second;
                 if (tipus == TIPUS_NORMAL) {
                     // només cap amunt o cap avall segons color
                     if ((color == COLOR_BLANC && df != -1) ||
@@ -177,7 +181,7 @@ void Tauler::actualitzaMovimentsValids() {
                     if (dins(f1, c1) && !m_tauler[f1][c1]) {
                         Moviment m(origen);
                         m.afegeix(Posicio(
-                            std::string() + char('a' + c1) +
+                            string() + char('a' + c1) +
                             char('0' + (8 - f1))
                         ));
                         simpleMoves.push_back(m);
@@ -188,7 +192,7 @@ void Tauler::actualitzaMovimentsValids() {
                     while (dins(r, c) && !m_tauler[r][c]) {
                         Moviment m(origen);
                         m.afegeix(Posicio(
-                            std::string() + char('a' + c) +
+                            string() + char('a' + c) +
                             char('0' + (8 - r))
                         ));
                         simpleMoves.push_back(m);
@@ -199,12 +203,12 @@ void Tauler::actualitzaMovimentsValids() {
 
             // 4) Ordenem i assignem moviments a ptr
             if (tipus == TIPUS_NORMAL) {
-                for (auto& m : captureMoves) ptr->afegeixMoviment(m);
-                for (auto& m : simpleMoves)  ptr->afegeixMoviment(m);
+                for (const Moviment& m : captureMoves) ptr->afegeixMoviment(m);
+                for (const Moviment& m : simpleMoves)  ptr->afegeixMoviment(m);
             }
             else {
-                for (auto& m : simpleMoves)  ptr->afegeixMoviment(m);
-                for (auto& m : captureMoves) ptr->afegeixMoviment(m);
+                for (const Moviment& m : simpleMoves)  ptr->afegeixMoviment(m);
+                for (const Moviment& m : captureMoves) ptr->afegeixMoviment(m);
             }
         }
     }
@@ -221,8 +225,8 @@ void Tauler::getPosicionsPossibles(
     int fo = origen.getFila(), co = origen.getColumna();
     if (!m_tauler[fo][co]) return;
     actualitzaMovimentsValids();
-    auto movs = m_tauler[fo][co]->getMoviments();
-    for (auto& m : movs) {
+    vector<Moviment> movs = m_tauler[fo][co]->getMoviments();
+    for (const Moviment& m : movs) {
         if (m.longitud() < 2) continue;
         Posicio dest = m.getSeq().back();
         bool exists = false;
@@ -243,15 +247,15 @@ bool Tauler::mouFitxa(
     if (!origPtr || origPtr->isEmpty()) return false;
 
     actualitzaMovimentsValids();
-    auto movs = origPtr->getMoviments();
+    vector<Moviment> movs = origPtr->getMoviments();
 
     // Comptador de captures per moviment
-    auto countCaptures = [](const Moviment& mv) {
+    function<int(const Moviment&)> countCaptures = [](const Moviment& mv) {
         int cap = 0;
-        const auto& seq = mv.getSeq();
+        const vector<Posicio>& seq = mv.getSeq();
         for (size_t k = 0; k + 1 < seq.size(); ++k) {
-            if (std::abs(seq[k + 1].getFila() - seq[k].getFila()) > 1 ||
-                std::abs(seq[k + 1].getColumna() - seq[k].getColumna()) > 1)
+            if (abs(seq[k + 1].getFila() - seq[k].getFila()) > 1 ||
+                abs(seq[k + 1].getColumna() - seq[k].getColumna()) > 1)
                 ++cap;
         }
         return cap;
@@ -259,47 +263,46 @@ bool Tauler::mouFitxa(
 
     // Global: màxim captures i peces que en poden fer
     int globalMaxCaptures = 0;
-    std::vector<Posicio> piecesCapturing;
+    vector<Posicio> piecesCapturing;
     for (int i = 0; i < N_FILES; ++i)
         for (int j = 0; j < N_COLUMNES; ++j) {
             Fitxa* p = m_tauler[i][j];
             if (!p || p->getColor() != origPtr->getColor()) continue;
             int localMax = 0;
-            for (auto& mv : p->getMoviments())
-                localMax = std::max(localMax, countCaptures(mv));
+            for (const Moviment& mv : p->getMoviments())
+                localMax = max(localMax, countCaptures(mv));
             if (localMax > 0) {
                 piecesCapturing.push_back(
-                    Posicio(std::string() + char('a' + j) +
+                    Posicio(string() + char('a' + j) +
                         char('0' + (8 - i)))
                 );
-                globalMaxCaptures = std::max(globalMaxCaptures, localMax);
+                globalMaxCaptures = max(globalMaxCaptures, localMax);
             }
         }
 
     // Troba el moviment escollit
     bool found = false;
     Moviment chosen;
-    for (auto& m : movs) {
+    for (const Moviment& m : movs) {
         if (m.getSeq().back() == desti) {
             chosen = m; found = true; break;
         }
     }
     if (!found) return false;
     int chosenCaps = countCaptures(chosen);
-    const auto& seq = chosen.getSeq();
+    const vector<Posicio>& seq = chosen.getSeq();
 
-    // Si hi ha captures obligatòries però l’escollit n’és 0
+    // Si hi ha captures obligatòries però no en fem
     if (globalMaxCaptures > 0 && chosenCaps == 0) {
-        // Mou strict sense captures: desa només posició final
         m_tauler[desti.getFila()][desti.getColumna()] = origPtr;
         m_tauler[fo][co] = nullptr;
-        for (auto& p : piecesCapturing)
+        for (const Posicio& p : piecesCapturing)
             m_tauler[p.getFila()][p.getColumna()]->setEmpty();
         actualitzaMovimentsValids();
         return true;
     }
 
-    // Aplica captures intermèdies
+    // Aplica captures intermedies (inclou bufada)
     for (size_t k = 0; k + 1 < seq.size(); ++k) {
         int r1 = seq[k].getFila(), c1 = seq[k].getColumna();
         int r2 = seq[k + 1].getFila(), c2 = seq[k + 1].getColumna();
@@ -307,9 +310,8 @@ bool Tauler::mouFitxa(
         int dc = (c2 > c1 ? 1 : (c2 < c1 ? -1 : 0));
         int rr = r1 + dr, cc = c1 + dc;
         while (rr != r2 || cc != c2) {
-            auto p = m_tauler[rr][cc];
-            if (p && p->getColor() != origPtr->getColor()) {
-                delete p;
+            if (m_tauler[rr][cc] && m_tauler[rr][cc]->getColor() != origPtr->getColor()) {
+                delete m_tauler[rr][cc];
                 m_tauler[rr][cc] = nullptr;
                 break;
             }
@@ -317,26 +319,30 @@ bool Tauler::mouFitxa(
         }
     }
 
-    // Mou la fitxa
+    // Mou la fitxa i possible promoció
     m_tauler[fo][co] = nullptr;
-    // Promoció si cal
     Posicio last = seq.back();
-    int fd = last.getFila();
     if (origPtr->getTipus() == TIPUS_NORMAL) {
+        int fd = last.getFila();
         if ((origPtr->getColor() == COLOR_BLANC && fd == 0) ||
-            (origPtr->getColor() == COLOR_NEGRE && fd == N_FILES - 1)) {
+            (origPtr->getColor() == COLOR_NEGRE && fd == N_FILES - 1))
             origPtr->converteixDama();
-        }
     }
     m_tauler[last.getFila()][last.getColumna()] = origPtr;
     actualitzaMovimentsValids();
     return true;
+    // Retorna el punter a la fitxa d'una posicio donada
+    Fitxa* Tauler::getFitxa(const Posicio & pos) const {
+        int f = pos.getFila();
+        int c = pos.getColumna();
+        if (f < 0 || f >= N_FILES || c < 0 || c >= N_COLUMNES) return nullptr;
+        return m_tauler[f][c];
 }
 
 // ------------------------------
 // ASCII art del tauler amb punters
-std::string Tauler::toString() const {
-    std::ostringstream ss;
+string Tauler::toString() const {
+    ostringstream ss;
     for (int i = 0; i < N_FILES; ++i) {
         ss << (8 - i) << ": ";
         for (int j = 0; j < N_COLUMNES; ++j) {
@@ -347,5 +353,5 @@ std::string Tauler::toString() const {
         ss << '\n';
     }
     ss << "   a b c d e f g h\n";
-    return ss;
+    return ss.str();
 }

@@ -1,6 +1,8 @@
 #include "cuamoviments.hpp"
 #include <fstream>
 #include <stdexcept>
+#include "moviment.hpp"
+
 
 // Constructor: comença amb cua buida
 CuaMoviments::CuaMoviments()
@@ -42,9 +44,9 @@ bool CuaMoviments::estaVacia() const {
 
 void CuaMoviments::vaciar() {
     while (cap) {
-        Nodo* següent = cap->seguent;
+        Nodo* seguent = cap->seguent;
         delete cap;
-        cap = següent;
+        cap = seguent;
     }
     cua = nullptr;
 }
@@ -55,7 +57,7 @@ void CuaMoviments::guardaEnFichero(const std::string& nomFitxer) {
         throw std::runtime_error("No es pot obrir fitxer per escriure: " + nomFitxer);
     }
     for (Nodo* it = cap; it; it = it->seguent) {
-        const auto& seq = it->moviment.getSeq();
+        const std::vector<Posicio>& seq = it->moviment.getSeq();
         // Escriu posició inicial i final del moviment
         out << seq.front().toString()
             << ' '
@@ -71,7 +73,7 @@ void CuaMoviments::cargaDeFichero(const std::string& nomFitxer) {
     }
     std::string origen, desti;
     while (in >> origen >> desti) {
-        Moviment m(Posicio(origen));
+        Moviment m{ Posicio(origen) };
         m.afegeix(Posicio(desti));
         encola(m);
     }

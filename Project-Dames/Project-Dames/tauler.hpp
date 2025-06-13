@@ -30,6 +30,9 @@ public:
     // Mou la fitxa (i aplica captures/promocions), retorna true si és vàlid
     bool mouFitxa(const Posicio& origen, const Posicio& desti);
 
+    // Acces directe a una casella
+    Fitxa* getFitxa(const Posicio& pos) const;
+
     // Representació ASCII del tauler
     std::string toString() const;
 };

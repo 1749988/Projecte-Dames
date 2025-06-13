@@ -11,6 +11,7 @@ private:
 public:
     Posicio();
     Posicio(const std::string& pos);
+    Posicio(int fila, int columna);
     bool operator==(const Posicio& other) const;
     int  getFila()    const;
     int  getColumna() const;

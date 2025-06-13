@@ -15,6 +15,7 @@ Posicio::Posicio(const std::string& pos) {
     columna_ = pos[0] - 'a';
     fila_ = 8 - (pos[1] - '0');
 }
+Posicio::Posicio(int fila, int columna) : fila_(fila), columna_(columna) {}
 
 bool Posicio::operator==(const Posicio& other) const {
     return fila_ == other.fila_ && columna_ == other.columna_;
