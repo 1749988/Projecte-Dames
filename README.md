@@ -8,5 +8,9 @@
   - **Lógica de movimientos**: cálculo de movimientos simples y capturas recursivas para fichas normales y damas.
   - **Modo Replay**: almacenamiento y reproducción de secuencias de jugadas mediante la clase `CuaMoviments`, estructurada como una lista enlazada.
 
+## Autores
+
+- **Ismail Boukhzar**  
+- **Alex Caro**
 
 
