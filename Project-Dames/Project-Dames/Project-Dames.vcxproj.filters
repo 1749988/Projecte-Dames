@@ -18,159 +18,153 @@
     <ClInclude Include="cuamoviments.hpp">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\..\..\Pictures\codi_lliurament_final\0. C++ Code\Graphic Lib\debug.h">
+    <ClInclude Include="debug.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\..\..\Pictures\codi_lliurament_final\0. C++ Code\Graphic Lib\error.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\..\Pictures\codi_lliurament_final\0. C++ Code\Logic Game\GraphicManager.h">
+    <ClInclude Include="error.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
     <ClInclude Include="fitxa.hpp">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\..\..\Pictures\codi_lliurament_final\0. C++ Code\Graphic Lib\image_png.h">
+    <ClInclude Include="GraphicManager.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\..\..\Pictures\codi_lliurament_final\0. C++ Code\Logic Game\info_joc.hpp">
+    <ClInclude Include="image_png.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\..\..\Pictures\codi_lliurament_final\0. C++ Code\Graphic Lib\keyboard.h">
+    <ClInclude Include="info_joc.hpp">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\..\..\Pictures\codi_lliurament_final\0. C++ Code\Logic Game\joc.hpp">
+    <ClInclude Include="joc.hpp">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\..\..\Pictures\codi_lliurament_final\0. C++ Code\Graphic Lib\keyboard_sdl.h">
+    <ClInclude Include="keyboard.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\..\..\Pictures\codi_lliurament_final\0. C++ Code\Graphic Lib\mouse.h">
+    <ClInclude Include="keyboard_sdl.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\..\..\Pictures\codi_lliurament_final\0. C++ Code\Graphic Lib\libreria.h">
+    <ClInclude Include="libreria.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="mouse.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
     <ClInclude Include="moviment.hpp">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\..\..\Pictures\codi_lliurament_final\0. C++ Code\Graphic Lib\NFont\NFont.h">
+    <ClInclude Include="NFont.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\..\..\Pictures\codi_lliurament_final\0. C++ Code\Graphic Lib\NFont\NFont_gpu.h">
+    <ClInclude Include="NFont_gpu.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
     <ClInclude Include="posicio.hpp">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\..\..\Pictures\codi_lliurament_final\0. C++ Code\Graphic Lib\NFont\SDL_FontCache.h">
+    <ClInclude Include="SDL_FontCache.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\..\..\Pictures\codi_lliurament_final\0. C++ Code\Graphic Lib\sound.h">
+    <ClInclude Include="sound.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\..\..\Pictures\codi_lliurament_final\0. C++ Code\Graphic Lib\sprites.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\..\Pictures\codi_lliurament_final\0. C++ Code\Graphic Lib\stb_vorbis.h">
+    <ClInclude Include="sprites.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
     <ClInclude Include="tauler.hpp">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\..\..\Pictures\codi_lliurament_final\0. C++ Code\Graphic Lib\video.h">
+    <ClInclude Include="video.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="cuamoviments.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="debug.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
     <ClCompile Include="fitxa.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="GraphicManager.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="joc.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="keyboard.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="mouse.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
     <ClCompile Include="moviment.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
+    <ClCompile Include="NFont.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
     <ClCompile Include="posicio.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="SDL_FontCache.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="sound.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="sprites.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="stb_vorbis.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
     <ClCompile Include="tauler.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="cuamoviments.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\..\..\Pictures\codi_lliurament_final\0. C++ Code\Logic Game\GraphicManager.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\..\..\Pictures\codi_lliurament_final\0. C++ Code\Logic Game\joc.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\..\..\Pictures\codi_lliurament_final\0. C++ Code\Logic Game\main.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\..\..\Pictures\codi_lliurament_final\0. C++ Code\Graphic Lib\debug.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\..\..\Pictures\codi_lliurament_final\0. C++ Code\Graphic Lib\image_png.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\..\..\Pictures\codi_lliurament_final\0. C++ Code\Graphic Lib\keyboard.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\..\..\Pictures\codi_lliurament_final\0. C++ Code\Graphic Lib\mouse.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\..\..\Pictures\codi_lliurament_final\0. C++ Code\Graphic Lib\sound.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\..\..\Pictures\codi_lliurament_final\0. C++ Code\Graphic Lib\sprites.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\..\..\Pictures\codi_lliurament_final\0. C++ Code\Graphic Lib\stb_vorbis.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\..\..\Pictures\codi_lliurament_final\0. C++ Code\Graphic Lib\video.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\..\..\Pictures\codi_lliurament_final\0. C++ Code\Graphic Lib\NFont\NFont.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\..\..\Pictures\codi_lliurament_final\0. C++ Code\Graphic Lib\NFont\SDL_FontCache.cpp">
+    <ClCompile Include="video.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="..\..\..\..\..\..\Pictures\codi_lliurament_final\1. Resources\data\Fitxes\dama_blanca.png">
+    <Image Include="dama_blanca.png">
       <Filter>Archivos de recursos</Filter>
     </Image>
-    <Image Include="..\..\..\..\..\..\Pictures\codi_lliurament_final\1. Resources\data\Fitxes\dama_negra.png">
+    <Image Include="dama_negra.png">
       <Filter>Archivos de recursos</Filter>
     </Image>
-    <Image Include="..\..\..\..\..\..\Pictures\codi_lliurament_final\1. Resources\data\Fitxes\fitxa_blanca.png">
+    <Image Include="fitxa_blanca.png">
       <Filter>Archivos de recursos</Filter>
     </Image>
-    <Image Include="..\..\..\..\..\..\Pictures\codi_lliurament_final\1. Resources\data\Fitxes\fitxa_negra.png">
+    <Image Include="fitxa_negra.png">
       <Filter>Archivos de recursos</Filter>
     </Image>
-    <Image Include="..\..\..\..\..\..\Pictures\codi_lliurament_final\1. Resources\data\GUI\fons.png">
+    <Image Include="fons.png">
       <Filter>Archivos de recursos</Filter>
     </Image>
-    <Image Include="..\..\..\..\..\..\Pictures\codi_lliurament_final\1. Resources\data\GUI\posicio_valida.png">
+    <Image Include="posicio_valida.png">
       <Filter>Archivos de recursos</Filter>
     </Image>
-    <Image Include="..\..\..\..\..\..\Pictures\codi_lliurament_final\1. Resources\data\GUI\tauler.png">
+    <Image Include="tauler.png">
       <Filter>Archivos de recursos</Filter>
     </Image>
   </ItemGroup>
   <ItemGroup>
-    <Font Include="..\..\..\..\..\..\Pictures\codi_lliurament_final\1. Resources\data\Fonts\FreeSans.ttf">
+    <Font Include="FreeSans.ttf">
       <Filter>Archivos de recursos</Filter>
     </Font>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="..\..\..\..\..\..\Pictures\codi_lliurament_final\1. Resources\data\Games\moviments.txt">
+    <Text Include="moviments.txt">
       <Filter>Archivos de recursos</Filter>
     </Text>
-    <Text Include="..\..\..\..\..\..\Pictures\codi_lliurament_final\1. Resources\data\Games\tauler_inicial.txt">
+    <Text Include="tauler_inicial.txt">
       <Filter>Archivos de recursos</Filter>
     </Text>
   </ItemGroup>

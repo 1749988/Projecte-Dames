@@ -2,9 +2,6 @@
 #include <SDL.h>
 #elif __APPLE__
 #include <SDL2/SDL.h>
-#else
-// Linux
-#include <SDL.h>
 #endif
 
 #include <stdlib.h>

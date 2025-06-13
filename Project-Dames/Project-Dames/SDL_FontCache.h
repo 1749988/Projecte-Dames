@@ -33,7 +33,6 @@ THE SOFTWARE.
 #ifndef _SDL_FONTCACHE_H__
 #define _SDL_FONTCACHE_H__
 
-#include "math.h"
 
 
 #if defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__NT__) || defined  (_WIN64)
@@ -42,10 +41,6 @@ THE SOFTWARE.
 #elif __APPLE__
 #include <SDL2/SDL.h>
 #include "SDL2_ttf/SDL_ttf.h"
-#else
-// Linux
-#include <SDL.h>
-#include <SDL_ttf.h>
 #endif
 
 

@@ -331,6 +331,7 @@ bool Tauler::mouFitxa(
     m_tauler[last.getFila()][last.getColumna()] = origPtr;
     actualitzaMovimentsValids();
     return true;
+}
     // Retorna el punter a la fitxa d'una posicio donada
     Fitxa* Tauler::getFitxa(const Posicio & pos) const {
         int f = pos.getFila();

@@ -8,9 +8,6 @@
 #include <png.h>
 #elif __APPLE__
 #include <libpng/png.h>
-#else
-// Linux
-#include <png.h>
 #endif
 
 

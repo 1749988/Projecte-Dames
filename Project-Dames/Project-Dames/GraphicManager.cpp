@@ -3,7 +3,7 @@
 //  MP_Practica
 //
 //  Created by Enric Vergara on 13/03/2021.
-//  Copyright Â© 2021 CompiledCreations. All rights reserved.
+//  Copyright © 2021 CompiledCreations. All rights reserved.
 //
 
 #include "GraphicManager.h"

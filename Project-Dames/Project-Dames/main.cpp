@@ -1,7 +1,7 @@
 //
 //  main.cpp
 //
-//  Copyright ï¿½ 2018 Compiled Creations Limited. All rights reserved.
+//  Copyright � 2018 Compiled Creations Limited. All rights reserved.
 //
 
 #if defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__NT__) || defined  (_WIN64)
@@ -24,16 +24,7 @@
 #include <SDL2/SDL.h>
 #pragma clang diagnostic pop
 
-#else
-// Linux
-#include <iostream>
-#define SDL_MAIN_HANDLED
-#include "../Graphic Lib/libreria.h"
-#include "../Graphic Lib/NFont/NFont.h"
-
 #endif
-
-// #include <conio.h>      /* getch */
 
 #include "./joc.hpp"
 #include "./info_joc.hpp"
@@ -47,9 +38,6 @@ int main(int argc, const char* argv[])
 
     //Inicialitza un objecte de la classe Screen que s'utilitza per gestionar la finestra grafica
     Screen pantalla(TAMANY_PANTALLA_X, TAMANY_PANTALLA_Y);
-
-    
-    
     //Mostrem la finestra grafica
     pantalla.show();
 
@@ -57,7 +45,7 @@ int main(int argc, const char* argv[])
 
     do
     {
-        // Captura tots els events de ratolÃ­ i teclat de l'ultim cicle
+        // Captura tots els events de ratolí i teclat de l'ultim cicle
         pantalla.processEvents();
 
         bool mouseStatus = Mouse_getBtnLeft();

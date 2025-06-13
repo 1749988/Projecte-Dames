@@ -37,9 +37,6 @@ THE SOFTWARE.
 #include <SDL.h>
 #elif __APPLE__
 #include <SDL2/SDL.h>
-#else
-// Linux
-#include <SDL.h>
 #endif
 
 #if defined(FC_USE_SDL_GPU) && !defined(NFONT_USE_SDL_GPU)
